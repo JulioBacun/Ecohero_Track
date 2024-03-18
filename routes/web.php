@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Admin\TrackingDataController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\Landing\GuestController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [GuestController::class, 'index'])->name('landing');
+
 
 Route::get('/admin/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/auth', [AuthController::class, 'authenticate'])->name('auth')->middleware('guest');
